@@ -42,16 +42,17 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v3
         with:
-        context: ./simple-api-student-main
-        tags:  ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api:latest
-        push: ${{ github.ref == 'refs/heads/develop' }}
+          context: ./simple-api-student-main
+          tags:  ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api:latest
+          push: ${{ github.ref == 'refs/heads/develop' }}
 
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
-        context: ./db
-        tags: ${{secrets.DOCKERHUB_USER}}/tp-devops/db
+          context: ./db
+          tags: ${{secrets.DOCKERHUB_USER}}/tp-devops/db
+          push: ${{ github.ref == 'refs/heads/develop' }}
 
 
       - name: Build image and push httpd
@@ -59,3 +60,4 @@ jobs:
         with:
           context: ./front
           tags: ${{secrets.DOCKERHUB_USER}}/tp-devops/front
+          push: ${{ github.ref == 'refs/heads/develop' }}
