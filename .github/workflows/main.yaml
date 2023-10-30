@@ -24,7 +24,7 @@ jobs:
       #finally build your app with the latest command
       - name: Build and test with Maven
         working-directory: simple-api-student-main
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=devops-epff_devops-epf -Dsonar.organization=devops-epff -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api-student-main/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=devops-epff_devops-epf -Dsonar.organization=devops-epff -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./pom.xml
 
 
 
