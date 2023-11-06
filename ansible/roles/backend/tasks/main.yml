@@ -1,0 +1,8 @@
+---
+# tasks file for roles/backend
+- name: Run BACKEND
+  docker_container:
+    name: backend-api
+    image: abworld/tp-devops-simple-api:1.0
+    networks:
+      - name: network

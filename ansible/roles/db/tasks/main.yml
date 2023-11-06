@@ -1,0 +1,12 @@
+---
+# tasks file for roles/db
+- name: Run DB
+  docker_container:
+    name: postgres-epf
+    image: abworld/tp-devops-db:1.0
+    networks:
+      - name: network
+  environment:
+    POSTGRES_DB: db
+    POSTGRES_USER: usr
+    POSTGRES_PASSWORD: pwd

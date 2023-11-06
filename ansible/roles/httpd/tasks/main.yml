@@ -1,0 +1,11 @@
+---
+# tasks file for roles/httpd
+- name: Run HTTPD
+  docker_container:
+    name: httpd
+    image: abworld/tp-devops-front:1.0
+    pull: true
+    recreate: true
+    networks:
+      - name: network
+    ports: "80:80"
